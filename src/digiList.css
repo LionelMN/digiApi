@@ -99,6 +99,7 @@
         font-size: 1.1rem;
         transition: .5s;
         opacity: 0;
+        transform: scale(0);
     }
 
     .buttons:hover{
@@ -107,6 +108,7 @@
 
     .buttons:hover .button{
         opacity: 1;
+        transform: scale(1);
     }
 
     .buttons:hover::before,.buttons:hover::after{
