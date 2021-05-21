@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Spectral&display=swap');
+
+:root{
+    --primaryColor: #0f1a26;
+    --imgBackgrounds: #bfced9;
+    --cardColor: #1c4496;
+    --textColor: #058679;
+}
+
+.container{
+    background: var(--primaryColor);
+    min-height: 100vh;
+    font-family: 'Karla', sans-serif;
+}
+
+.buttons{
+    font-family: 'Spectral', serif;
+    display: flex;
+    justify-content: space-around;
+    background: var(--cardColor);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.button{
+    text-align: center;
+
+    position: relative;
+    background: var(--imgBackgrounds);
+    padding: .5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    color: var(--textColor);
+    transition: 1s;
+}
+
+.button:hover{
+    transform: scale(1.1);
+}
+
+.digiList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.digimon{
+    width: 17rem;
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    margin: 0 0 1rem;
+    border: 1px solid var(--cardColor);
+    background: var(--cardColor);
+}
+
+.digimon div:first-child{
+    background: white;
+    overflow: hidden;
+}
+
+.digimon img{
+    transition: 1s;
+    width: 13rem;
+}
+
+.digimon:hover img{
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 480px) {
+    .buttons{
+        position: relative;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        height: 2rem;
+    }
+
+    .buttons::after, .buttons::before{
+        position: absolute;
+        content: '';
+        height: 7px;
+        width: 150px;
+        background: var(--imgBackgrounds);
+        left: 30%;
+    }
+
+    .buttons::after{
+        top: 25px;
+    }
+
+    .buttons::before{
+        bottom: 15px;
+    }
+
+    .button{
+        margin: .5rem;
+        font-size: 1.1rem;
+        transition: .5s;
+        opacity: 0;
+    }
+
+    .buttons:hover{
+        height: auto;
+    }
+
+    .buttons:hover .button{
+        opacity: 1;
+    }
+
+    .buttons:hover::before,.buttons:hover::after{
+        display: none;
+    }
+}
